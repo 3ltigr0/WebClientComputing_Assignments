@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>현재 시각은?</title>
+</head>
+<style>
+    #time{color: blue; font-size: 40px; font-weight: bold; text-align: center;}
+</style>
+<body>
+    <p id="time"></p>
+    <script>
+        function ct()
+        {
+            var today = new Date();
+
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+
+            var noon = "오전"
+            if(h>12)
+            {
+                h -= 12;
+                noon = "오후"
+            }
+
+            h = digit(h);
+            m = digit(m);
+            s = digit(s);
+
+            document.querySelector('#time').innerText = noon + " " + h + ":" + m + ":" + s;
+            setTimeout(ct, 1000);
+        }
+        function digit(n)
+        {
+            var t = "0";
+            n = n.toString();
+            if(n.length < 2)
+                return t+n;
+            else
+                return n;
+        }
+        ct();
+    </script>
+</body>
+</html>

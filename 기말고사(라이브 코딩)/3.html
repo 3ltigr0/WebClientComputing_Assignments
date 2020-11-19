@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 축소 확대</title>
+</head>
+<body>
+    <img src="1.jpg" alt="1">
+    <script>
+        window.onmousewheel = zoom(event);
+        var img = document.querySelector("img");
+        var x = 100
+        function zoom(e)
+        {
+            if(e.wheel>0)
+            {
+                x+=5;
+                img.style.width=  x+"%";
+            }
+            else if (e.wheel < 0)
+            {
+                x-=5;
+                img.style.width=  x+"%";
+            }
+        }
+    </script>
+</body>
+</html>

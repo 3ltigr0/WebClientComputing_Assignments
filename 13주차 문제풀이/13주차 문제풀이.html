@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>13주차 문제 풀이</title>
+</head>
+<body>
+    <h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3>
+    <hr>
+    <form>
+        <input type="radio" name="food" value="kor" checked onclick="chk(this)"> 한식
+        <input type="radio" name="food" value="chn" onclick="chk(this)"> 중식
+        <input type="radio" name="food" value="jpn" onclick="chk(this)"> 일식
+        <input type="radio" name="food" value="west" onclick="chk(this)"> 양식
+    </form>
+    <img id="img" src ="한식.jpg" alt = "한식">
+    <script>
+        var pic = document.getElementById("img");
+        function chk(food)
+        {
+            if(food.value == "kor")
+            {
+                pic.src = "한식.jpg";
+                pic.alt = "한식";
+            }
+            else if(food.value == "chn")
+            {
+                pic.src = "중식.jpg";
+                pic.alt = "중식";
+            }
+            else if(food.value == "jpn")
+            {
+                pic.src = "일식.jpg";
+                pic.alt = "일식";
+            }
+            else if(food.value == "west")
+            {
+                pic.src = "양식.jpg";
+                pic.alt = "양식";
+            }
+        }
+    </script>
+</body>
+</html>

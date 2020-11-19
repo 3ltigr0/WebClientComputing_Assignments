@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>문제 2</title>
+    <style>
+        #container
+        {
+            width:500px;
+            margin:10px auto;
+        }
+
+        form fieldset
+        {
+            margin-bottom:25px; 
+        }
+
+        #pr
+        {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>피자 주문</h1>
+        <fieldset>
+            <legend>사이즈</legend>
+            <p>Large - 24000원</p>
+        </fieldset>
+        <form name="add">
+            <fieldset>
+                <legend>추가 주문</legend>
+                <label><input type="checkbox" name="add1" value="pickle">피클(800원)</label>
+                <label><input type="checkbox" name="add2" value="chili">칠리 소스(300원)</label>
+                <label><input type="checkbox" name="add3" value="dip">디핑 소스(200원)</label>
+                <label><input type="checkbox" name="add4" value="stick">치즈스틱(4개, 4800원))</label>
+                <label><input type="checkbox" name="add5" value="corn">콘 샐러드(2400원)</label>
+            </fieldset>
+        </form>
+        <fieldset>
+            <legend>합계</legend>
+            <p id="pr">24000원</p>
+        </fieldset>
+        <script>
+            var price = 24000;
+            var op1 = document.add.add1;
+            var op2 = document.add.add2;
+            var op3 = document.add.add3;
+            var op4 = document.add.add4;
+            var op5 = document.add.add5;
+
+            op1.addEventListener("click", function()
+            {
+                if(op1.checked == true)
+                    price += 800;
+                else
+                    price -= 800
+                document.querySelector('#pr').innerText = price + "원"; 
+            });
+            op2.addEventListener("click", function()
+            {
+                if(op2.checked == true)
+                    price += 300;
+                else
+                    price -= 300
+
+                document.querySelector('#pr').innerText = price + "원"; 
+            });
+            op3.addEventListener("click", function()
+            {
+                if(op3.checked == true)
+                    price += 200;
+                else
+                    price -= 200
+
+                document.querySelector('#pr').innerText = price + "원"; 
+            });
+            op4.addEventListener("click", function()
+            {
+                if(op4.checked == true)
+                    price += 4800;
+                else
+                    price -= 4800
+
+                document.querySelector('#pr').innerText = price + "원"; 
+            });
+            op5.addEventListener("click", function()
+            {
+                if(op5.checked == true)
+                    price += 2400;
+                else
+                    price -= 2400
+
+                document.querySelector('#pr').innerText = price + "원"; 
+            });  
+        </script>
+    </div>
+
+</body>
+</html>

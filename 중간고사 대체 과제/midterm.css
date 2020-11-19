@@ -1,0 +1,7 @@
+#born, #borndate {text-align: center;}
+#born, #b, #d {color: grey; font-size: 20px;}
+#borndate {font-weight: bold; font-size: 50px;}
+table {margin: auto; padding: 10px; border: 5px dotted darksalmon;}
+#a, #c {font-weight: bold; font-size: 25px;}
+td {width: 10em;}
+#b:hover, #d:hover {background:pink;}

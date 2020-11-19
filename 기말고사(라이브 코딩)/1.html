@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 슬라이드 쇼</title>
+</head>
+<body>
+    <div>
+        <img src="1.jpg" alt="1">
+        <img src="2.jpg" alt="2">
+        <img src="3.jpg" alt="3">
+        <img src="4.jpg" alt="4">
+        <br>
+        <button id="prev" style="visibility: hidden;">&lang;</button>
+        <button id="next">&rang;</button>
+    </div>
+    <script>
+        var images = document.querySelectorAll("div > img");
+        var prev = document.querySelector("#prev");
+        var next = document.querySelector("#next");
+        var indi = 0;
+        show(indi);
+
+        prev.onclick = prevbutton;
+        next.onclick = nextbutton;
+
+        function show(n)
+        {
+            for(var i = 0; i < images.length; i++)
+            {
+                images[i].style.display = "none";
+            }
+            images[n].style.display = "inline";
+            images[n+1].style.display = "inline";
+        }
+        function prevbutton()
+        {
+            indi = 0
+            show(indi);
+            prev.style.visibility = "hidden";
+            next.style.visibility = "visible";
+        }
+        function nextbutton()
+        {
+            indi = 2
+            show(indi);
+            next.style.visibility = "hidden";
+            prev.style.visibility = "visible";
+        }
+    </script>
+</body>
+</html>

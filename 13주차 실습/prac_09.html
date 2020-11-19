@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>onmouseover과 onmouseout</title>
+</head>
+<body>
+    <h3>아이템에 마우스를 올리면 설명 출력</h3>    
+    <hr>
+    <p>여름방학 때 하고 싶은 것들</p>
+    <ul>
+        <li onmouseover = "mouseIn(0, event);" onmouseout = "mouseOut();">자전거로 대한민국 일주</li>
+        <li onmouseover = "mouseIn(1, event);" onmouseout = "mouseOut();">책 100권 읽기</li>
+        <li onmouseover = "mouseIn(2, event);" onmouseout = "mouseOut();">철인 3종 경기 준비</li>
+        <li onmouseover = "mouseIn(3, event);" onmouseout = "mouseOut();">자바스크립트 정복</li>
+    </ul>
+    <div style="visibility: hidden; background-color: skyblue; border: 2px solid yellowgreen; position: absolute; width: 15em;"></div>
+    <script>
+        var s = document.querySelector("div").style;
+        function mouseIn(n, e)
+        {
+            var txt;
+            switch (n)
+            {
+                case 0:
+                    txt = "빨간 자전거를 타고 서울, 대전, 대구, 부산 찍고 목포, 인천을 거쳐 달린다";
+                    break;
+
+                case 1:
+                    txt = "교양서적, 소설 등등등";
+                    break;
+
+                case 2:
+                    txt = "체력을 열심히 늘린다";
+                    break;
+
+                case 3:
+                    txt = "다양한 실습 예제 풀어보기";
+                    break;
+            }   
+            s.top = e.clientY+"px";
+            s.left = e.clientX+"px";
+            s.visibility = "visible";
+            document.querySelector("div").innerHTML = txt
+
+        }
+        function mouseOut()
+        {
+            s.visibility = "hidden";
+        }
+    </script>
+</body>
+</html>

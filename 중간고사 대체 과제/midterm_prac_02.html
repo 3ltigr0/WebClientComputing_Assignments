@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>정수 5개 입력받아 역순으로 출력</title>
+</head>
+<body>
+    <h3>정수 5개 입력받아 역순으로 출력</h3>
+    <hr>
+    <div>입력된 수의 배열</div>
+    <script>
+        var n=new Array(5);
+        for(var i = 0; i < 5; i++)
+        {
+            n[i]=prompt();
+            document.writeln(n[i]);
+        }
+    </script>
+    <hr>
+    <div>역순으로 재정렬된 배열</div>
+    <script>
+        var nr = n.reverse();
+        for(var i = 0; i < 5; i++)
+        {
+            document.writeln(n[i]);
+        }
+    </script>
+</body>
+</html>

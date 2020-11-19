@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>onkeydown</title>
+</head>
+<body>
+    <h3>계산기 만들기</h3>
+    <hr>
+    <p>수식을 입력하고 &lt;Enter&gt;를 입력하세요.</p>
+    <label for="exp">식</label>
+    <input type="text" id="exp">
+    <br>
+    <label for="ans">값</label>
+    <input type="text" id="ans">
+    <script>        
+        window.onkeydown = function(e)
+        {
+            if(e.keyCode==13)
+            {
+                var s = document.querySelector("#exp").value;
+                document.querySelector("#ans").value = eval(s);
+            }
+        }
+    </script>
+</body>
+</html>
